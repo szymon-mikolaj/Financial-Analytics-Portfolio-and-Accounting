@@ -1,0 +1,142 @@
+# Słownik kont: nazwa -> numer 
+# Słownik kont księgowych: klucz = nazwa konta, wartość = numer konta. Nie jest to lista tylko struktura typu słownik (dictionary), 
+która umożliwia szybkie wyszukiwanie numeru konta na podstawie jego nazwy. 
+# Źródłem danych była polityka rachunkowości po 2020 r. oraz źródła internetowe o tematyce rachunkowości.
+# Słownik służy do losowego generowania pytań dla samodzielnej nauki kont.
+
+konta = {
+    "Środki trwałe (Majątek trwały)": "010",
+    "Aktywa niematerialne i prawne": "020",
+    "Długoterminowe aktywa finansowe": "030",
+    "Nieruchomości inwestycyjne i prawa": "040",
+    "Amortyzacja środków trwałych": "070",
+    "Amortyzacja wartości niematerialnych i prawnych": "075",
+    "Odpisy aktualizujące nieruchomości inwestycyjne i prawa": "077",
+    "Odpisy aktualizujące środki trwałe oraz wartości niematerialne i prawne": "078",
+    "Odpisy aktualizujące wartość długoterminowych aktywów finansowych": "079",
+    "Środki trwałe w budowie": "080",
+    "Środki trwałe w likwidacji": "091",
+    "Środki trwałe dzierżawione": "092",
+    "Środki trwałe wynajmowane": "093",
+    "Gotówka w kasie": "100",
+    "Środki na rachunku bankowym": "130",
+    "Pozostałe środki pieniężne": "135",
+    "Kredyty bankowe długoterminowe": "138",
+    "Kredyty bankowe krótkoterminowe": "139",
+    "Krótkoterminowe aktywa finansowe": "140",
+    "Odpisy aktualizujące wartość krótkoterminowych aktywów finansowych": "141",
+    "Weksle obce": "144",
+    "Środki pieniężne w drodze": "145",
+    "Rachunek środków funduszy specjalnych": "149",
+    "Rozrachunki z odbiorcami (Należności od klientów)": "200",
+    "Rozrachunki z dostawcami (Zobowiązania wobec dostawców)": "201",
+    "Zobowiązania wekslowe": "214",
+    "Rozrachunki publicznoprawne (Zobowiązania podatkowe i inne publicznoprawne)": "220",
+    "Rozrachunki z ZUS (Składki ZUS)": "220-1",
+    "Rozrachunki z US (Podatki do urzędu skarbowego)": "220-2",
+    "Rozrachunki z tytułu podatku VAT (VAT należny i naliczony)": "221",
+    "Rozliczenie należnego VAT (VAT należny do rozliczenia)": "221-1",
+    "Rozliczenie naliczonego VAT (VAT naliczony do rozliczenia)": "221-2",
+    "Podatek VAT do rozliczenia (Podatek VAT do zapłaty)": "223",
+    "Inne rozrachunki publicznoprawne": "225",
+    "Rozrachunki z tytułu wynagrodzeń": "230",
+    "Należności z tytułu niedoborów i szkód": "231",
+    "Pozostałe rozrachunki z pracownikami": "234",
+    "Pozostałe rozrachunki": "240",
+    "Rozliczenie niedoborów i szkód": "242",
+    "Rozliczenie nadwyżek": "243",
+    "Należności dochodzone na drodze sądowej": "244",
+    "Należne wpłaty na poczet kapitału zakładowego": "250",
+    "Odpisy aktualizujące należności": "290",
+    "Zobowiązania warunkowe": "291",
+    "Rozliczenie zakupu majątku trwałego": "300",
+    "Rozliczenie zakupów materiałów": "301",
+    "Rozliczenie zakupu usług": "302",
+    "Rozliczenie zakupu towarów": "303",
+    "Zapasy materiałów": "310",
+    "Towary w hurcie": "330",
+    "Towary w detalu": "335",
+    "Odchylenia od cen ewidencyjnych materiałów": "341",
+    "Odchylenia od cen ewidencyjnych towarów w hurcie": "342",
+    "Odchylenia od cen ewidencyjnych towarów z tytułu marży w detalu": "343",
+    "Odchylenia od cen ewidencyjnych towarów z tytułu VAT w detalu": "344",
+    "Odchylenia aktualizujące wartości zapasów materiałów i towarów": "345",
+    "Zapasy obce": "390",
+    "Koszty amortyzacji": "400",
+    "Zużycie materiałów i energii": "401",
+    "Koszty usług zewnętrznych": "402",
+    "Koszty podatków i opłat": "403",
+    "Koszty wynagrodzeń": "404",
+    "Składki i świadczenia społeczne": "405",
+    "Koszty podróży służbowych": "406",
+    "Pozostałe koszty": "409",
+    "Rozliczenie kosztów ogólnych": "490",
+    "Koszty działalności podstawowej": "500",
+    "Koszty wydziałowe": "520",
+    "Koszty zakupu materiałów i towarów": "522",
+    "Koszty sprzedaży": "527",
+    "Koszty handlowe": "528",
+    "Koszty działalności pomocniczej": "530",
+    "Koszty administracyjne i zarządu": "550",
+    "Rozliczenie kosztów działalności": "580",
+    "Wyroby gotowe": "601",
+    "Półfabrykaty": "602",
+    "Produkcja w toku": "603",
+    "Odchylenia od cen ewidencyjnych wyrobów gotowych": "621",
+    "Odchylenia od cen ewidencyjnych półfabrykatów": "622",
+    "Odchylenia aktualizujące wartości wyrobów gotowych": "623",
+    "Rozliczenia międzyokresowe kosztów zakupu czynne": "640",
+    "Rozliczenia międzyokresowe kosztów czynne": "641",
+    "Rozliczenia międzyokresowe kosztów bierne": "642",
+    "Aktywa z tytułu odroczonego podatku dochodowego": "650",
+    "Przychody netto ze sprzedaży wyrobów gotowych": "701",
+    "Przychody netto ze sprzedaży usług": "702",
+    "Koszty sprzedanych wyrobów gotowych": "711",
+    "Koszty sprzedanych usług": "712",
+    "Przychody netto ze sprzedanych towarów": "730",
+    "Wartość sprzedanych towarów w cenie zakupu/nabycia": "731",
+    "Przychody netto ze sprzedanych materiałów": "740",
+    "Wartość sprzedanych materiałów w cenie zakupu/nabycia": "741",
+    "Przychody finansowe": "750",
+    "Koszty finansowe": "751",
+    "Pozostałe przychody operacyjne": "760",
+    "Pozostałe koszty operacyjne": "761",
+    "Obroty wewnętrzne": "790",
+    "Koszty obrotów wewnętrznych": "791",
+    "Kapitał akcyjny (udziałowy, właściciela)/ Fundusz założycielski (udziałowy)": "801",
+    "Kapitał zapasowy/Fundusz przedsiębiorstwa (zasobowy)": "802",
+    "Kapitał rezerwowy": "803",
+    "Kapitał/Fundusz z aktualizacji wyceny": "804",
+    "Rozliczenie wyniku finansowego": "820",
+    "Rezerwa z tytułu odroczonego podatku dochodowego": "830",
+    "Rezerwy": "840",
+    "Rozliczenia międzyokresowe przychodów": "845",
+    "Zakładowy fundusz świadczeń socjalnych": "851",
+    "Inne fundusze specjalne": "852",
+    "Wynik finansowy netto": "860",
+    "Podatek dochodowy": "870",
+    "Inne obowiązkowe obciążenia wyniku finansowego": "871"
+}
+
+# biblioteka random jest wbudowanym modułem, który generuje losowe elementy z listy, może je wybierać i mieszać
+import random
+
+# instrukcja rozpoczęcia gry 
+print("Witaj w grze: podaj numer konta dla podanej nazwy konta!")
+print("Aby zakończyć grę, wpisz 'koniec'.\n")
+
+while True:         
+    # funkcja losowania konta
+    nazwa = random.choice(list(konta.keys()))
+    numer_poprawny = konta[nazwa]
+
+    # pytanie wyświetlane dla gracza, dalsze komendy i ocena poprawności odpowiedzi
+    odpowiedz = input(f"Podaj numer konta dla: '{nazwa}': ")
+
+    if odpowiedz.lower() == "koniec": 
+        print("Koniec gry! Dzięki za zabawę 😊")
+
+    if odpowiedz == numer_poprawny:
+        print("Dobrze ✅\n")
+    else:
+        print(f"Źle ❌ Poprawny numer to: {numer_poprawny}\n")
